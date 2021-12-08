@@ -1,0 +1,7 @@
+{
+  "name": "bayat catering mobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
