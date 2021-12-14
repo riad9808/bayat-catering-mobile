@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Consommation
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,43 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">CONSOMMATION</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-item color="danger">
+    <ion-label>Choisir une date</ion-label>
+    <ion-datetime id="dynamicDisabled" displayFormat="DD MMM YYYY"   [(ngModel)]="datevalue" (ionChange)="changed()"
+                  monthShortNames="jan, fev, mar, avr, mai, jun, jul, aug, sep, oct, nov, dec"
+    ></ion-datetime>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  </ion-item>
+
+  <ion-card>
+    <ion-card-header style="text-align: center">
+      <ion-card-subtitle>CONSOMMATION GLOBALE</ion-card-subtitle>
+      <ion-card-title><h1>{{(montant$ | async)?.toLocaleString()}}</h1></ion-card-title>
+    </ion-card-header>
+
+
+    <ion-card *ngFor="let client of clients" color="danger" >
+      <ion-card-header style="text-align: center">
+        <ion-card-subtitle>  {{client.code}} </ion-card-subtitle>
+        <ion-card-title><h1>{{(client.montant)?.toLocaleString()}}</h1></ion-card-title>
+      </ion-card-header>
+
+      <ion-list-header>
+        <ion-label></ion-label>
+      </ion-list-header>
+      <ion-list >
+        <ion-item   *ngFor="let site of client.siteresultList" >
+          <ion-label>  {{site.code}}    </ion-label>
+          <ion-label style="justify-content: right">  {{site.montant.toLocaleString()}} </ion-label>
+        </ion-item>
+
+      </ion-list>
+
+    </ion-card>
+
+  </ion-card>
+
 </ion-content>

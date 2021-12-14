@@ -3,7 +3,19 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  host : "https://www.bayat-catering.tech:8443/api/",
+
+  production: false,
+  oidcConfig: {
+    client_id: '0oa35fxqaaqiE5MFm5d7',
+    server_host: 'https://dev-60426199.okta.com/oauth2/default',
+    redirect_url: window.location.origin + '/callback',
+    end_session_redirect_url: window.location.origin + '/logout',
+    scopes: 'openid profile',
+    pkce: true,
+    audience: 'api://default'
+  },
+  scheme: 'com.okta.dev-60426199:/'
 };
 
 /*

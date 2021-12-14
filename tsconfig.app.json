@@ -7,7 +7,15 @@
   },
   "files": [
     "src/main.ts",
-    "src/polyfills.ts"
+    "src/polyfills.ts",
+    "src/app/auth/auth-callback/auth-callback.module.ts",
+    "src/app/auth/end-session/end-session.module.ts",
+    "src/app/login/login.module.ts",
+    "src/app/tabs/tabs.module.ts",
+    "src/app/auth/auth-callback/auth-callback.module.ts",
+    "src/app/auth/end-session/end-session.module.ts",
+    "src/app/login/login.module.ts",
+    "src/app/tabs/tabs.module.ts"
   ],
   "include": [
     "src/**/*.d.ts"
