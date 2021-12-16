@@ -27,8 +27,11 @@ export class LoginPage implements OnInit, OnDestroy {
   }
 
   async signIn() {
+    console.log(environment.oidcConfig.redirect_url)
     await this.auth.signIn(
-      //{audience: environment.oidcConfig.audience }
+      {audience: environment.oidcConfig.audience
+
+      }
     );
   }
 
